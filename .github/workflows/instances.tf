@@ -1,7 +1,3 @@
-provider "google" {
-  project = "rich-discovery-441812-s6"
-  region  = "us-east1"
-}
 
 resource "google_compute_instance" "default" {
   name         = "my-vm"
