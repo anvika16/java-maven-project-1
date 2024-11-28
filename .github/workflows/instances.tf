@@ -5,7 +5,7 @@ resource "google_compute_instance" "demo-vm" {
 
   boot_disk {
     initialize_params {
-      image = "debian-11-bullseye"   # Use the image you need (this is a Debian image)
+      image = "debian-12-bookworm-v20231010"   # Use the image you need (this is a Debian image)
     }
   }
 
