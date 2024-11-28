@@ -26,9 +26,8 @@ jobs:
 
         steps:
         #checkout the repository to check the github Actions
-          - name: Checkout
-
-            uses: action/checkout@v3
+          - name: Checkout code
+            uses: actions/checkout@v3
 
         # Intilize Terraform
           - name: Terraform Init
