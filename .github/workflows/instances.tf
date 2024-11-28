@@ -1,17 +1,12 @@
-
 resource "google_compute_instance" "default" {
-  name         = "my-vm"
+  name         = "my-instance"
   machine_type = "e2-medium"
-  zone         = "us-east1-b"
-
-  boot_disk {
-    initialize_params {
-      image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
-    }
-  }
+  zone         = "us-east1-a"
 
   network_interface {
-    network = "default"  # or use your custom network/subnet
-    access_config {}
+    network = "projects/rich-discovery-441812-s6/global/networks/my-custom-network"
+    access_config {
+      // Enable external IP
+    }
   }
 }
