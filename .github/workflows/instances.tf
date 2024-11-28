@@ -1,11 +1,11 @@
-resource "google_compute_instance" "my-vm" {
+resource "google_compute_instance" "demo-vm" {
   name         = "terraform-vm"  # VM name
   machine_type = "e2-medium"     # Machine type (adjust based on your needs)
   zone         = "us-east1-c"  # Specify the zone within the region
 
   boot_disk {
     initialize_params {
-      image = "debian-11-bullseye-v20230404"  # Use the image you need (this is a Debian image)
+      image = "debian-11-bullseye"   # Use the image you need (this is a Debian image)
     }
   }
 
