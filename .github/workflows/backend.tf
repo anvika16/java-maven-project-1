@@ -1,6 +1,6 @@
 terraform {
     backend "gcp"{
-        bucket  = "my-bucket-1"
+        bucket  = "my_bucket_veera"
         prefix  = "terraform/state"
     }
 }
