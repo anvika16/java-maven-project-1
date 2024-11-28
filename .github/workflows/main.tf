@@ -20,6 +20,7 @@ resource "google_storage_bucket" "my-bucket" {
   name          = "my_bucket_veera"
   location      = "US"
   project       = "rich-discovery-441812-s6"
+  storage_class = "STANDARD"
   force_destroy = true
 
   lifecycle_rule {
