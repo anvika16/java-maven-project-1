@@ -50,6 +50,12 @@ jobs:
           - name: Terraform Apply
             run: terraform apply  -auto-approve
             working-directory: .github/workflows
+
+        # Destroy terrform
+          - name: Terraform Destroy
+            run: terraform destroy
+            working-directory: .github/workflows
+           
             
 
 
