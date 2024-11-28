@@ -1,4 +1,4 @@
-resource "google_compute_networ" "my-vpc" {
+resource "google_compute_network" "my-vpc" {
 
     name    =  "custom-vpc"
 
