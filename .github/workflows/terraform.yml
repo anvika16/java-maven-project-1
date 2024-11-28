@@ -1,0 +1,53 @@
+name: "terraform"
+
+on:
+    push: 
+        branches: ["main"]
+
+        pull_requests:
+
+
+
+permissions:
+
+    contents: read
+
+jobs:
+    terraform:
+        name: "Terraform"
+
+        runs-on: self-hosted
+
+        #use this bash shell regradeles 
+        defaults:
+            run:
+                shell: bash
+
+
+        steps:
+        #checkout the repository to check the github Actions
+          - name: Checkout
+
+            uses: action/checkout@v3
+
+        # Intilize Terraform
+          - name: Terraform Init
+            run: terraform init
+
+        # Validate Terrafom 
+          - name: Terraform Validate
+            run: terradorm validate
+
+        # plan for the terraform before execute 
+
+          - name: Terrafom plan
+            run: terraform plan
+
+        # execute terraform all files 
+
+          - name: Terraform Apply
+            run: terraform apply  -auto-approve
+            
+
+
+
