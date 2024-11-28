@@ -10,7 +10,7 @@ terraform {
 provider "google" {
   project = "rich-discovery-441812-s6"
   region  = "us-east1"
-  zone    = "us-east1-a"
+  zone    = "us-east1-c"
 }
 
 
