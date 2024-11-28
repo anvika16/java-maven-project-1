@@ -36,7 +36,7 @@ jobs:
         # Validate Terrafom 
           - name: Terraform Validate
             run: terraform validate
-            working-directory: https://github.com/anvika16/java-maven-project-1/tree/main/.github/workflows
+            working-directory: .github/workflows
 
         # plan for the terraform before execute 
 
