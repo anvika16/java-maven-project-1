@@ -16,8 +16,12 @@ provider "google" {
 
 
 
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
 resource "google_storage_bucket" "my-bucket" {
-  name          = "my_bucket_veera"
+  name          = "my_bucket_veera_${random_id.suffix.hex}"
   location      = "US"
   project       = "rich-discovery-441812-s6"
   storage_class = "STANDARD"
