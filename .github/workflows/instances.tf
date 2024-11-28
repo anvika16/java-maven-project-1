@@ -1,12 +1,20 @@
-resource "google_compute_instance" "default" {
-  name         = "my-instance"
-  machine_type = "e2-medium"
-  zone         = "us-east1-a"
+resource "google_compute_instance" "my-vm" {
+  name         = "terraform-vm"  # VM name
+  machine_type = "e2-medium"     # Machine type (adjust based on your needs)
+  zone         = "us-east1-a"  # Specify the zone within the region
 
-  network_interface {
-    network = "projects/rich-discovery-441812-s6/global/networks/my-custom-network"
-    access_config {
-      // Enable external IP
+  boot_disk {
+    initialize_params {
+      image = "debian-11-bullseye-v20230404"  # Use the image you need (this is a Debian image)
     }
   }
+
+  network_interface {
+    network = "custom-vpc"
+    access_config {
+      // Include this block to enable external IP
+    }
+  }
+
+  tags = ["http-server", "https-server"]  # Tags to allow HTTP/HTTPS traffic
 }
