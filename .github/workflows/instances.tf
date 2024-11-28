@@ -1,7 +1,7 @@
 resource "google_compute_instance" "my-vm" {
   name         = "terraform-vm"  # VM name
   machine_type = "e2-medium"     # Machine type (adjust based on your needs)
-  zone         = "us-east1-a"  # Specify the zone within the region
+  zone         = "us-east1-c"  # Specify the zone within the region
 
   boot_disk {
     initialize_params {
