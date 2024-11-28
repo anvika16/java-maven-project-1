@@ -1,3 +1,8 @@
+provider "google" {
+  project = "rich-discovery-441812-s6"
+  region  = "us-east1"
+}
+
 resource "google_compute_instance" "default" {
   name         = "my-vm"
   machine_type = "e2-medium"
@@ -10,7 +15,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "my-subnet"
+    network = "default"  # or use your custom network/subnet
     access_config {}
   }
 }
