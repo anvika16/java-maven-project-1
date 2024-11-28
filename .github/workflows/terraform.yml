@@ -35,7 +35,7 @@ jobs:
 
         # Validate Terrafom 
           - name: Terraform Validate
-            run: terradorm validate
+            run: terraform validate
 
         # plan for the terraform before execute 
 
