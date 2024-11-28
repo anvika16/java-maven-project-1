@@ -32,6 +32,7 @@ jobs:
         # Intilize Terraform
           - name: Terraform Init
             run: terraform init
+            working-directory: .github/workflows
 
         # Validate Terrafom 
           - name: Terraform Validate
@@ -42,11 +43,13 @@ jobs:
 
           - name: Terrafom plan
             run: terraform plan
+            working-directory: .github/workflows
 
         # execute terraform all files 
 
           - name: Terraform Apply
             run: terraform apply  -auto-approve
+            working-directory: .github/workflows
             
 
 
